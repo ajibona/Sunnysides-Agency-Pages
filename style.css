@@ -273,6 +273,7 @@ header > p{
 .main--article{
   padding: 4rem 2rem;
   background-color: var(--White);
+  z-index: 10;
 }
 
 .main--article h1{
@@ -296,6 +297,7 @@ header > p{
 .main--article > a{
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
   margin-inline: auto;
@@ -304,6 +306,36 @@ header > p{
   text-transform: uppercase;
   color: var(--Very-dark-desaturated-blue);
   font-weight: var(--font-weight-fraunces-Extra-bold-900);
+  position: relative;
+  z-index: 2;
+}
+
+.grid--article1 a::before{
+  content: "";
+  background-color: var(--Yellow);
+  position: absolute;
+  min-width: 130px;
+  height: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 30px;
+  opacity: .3;
+}
+
+.grid--article2 a::before{
+  content: "";
+  background-color: var(--Soft-red);
+  position: absolute;
+  min-width: 130px;
+  height: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 30px;
+  opacity: .3;
 }
 
 .image--box3{
@@ -418,6 +450,12 @@ header > p{
   .main--article a{
     text-align: left;
     justify-content: left;
+  }
+
+  .main--article a::before{
+    left: 0;
+    transform: translateX(0);
+    left: -8px;
   }
 
   .inner--box--text h1{
