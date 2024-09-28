@@ -48,6 +48,7 @@ header{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .header__navigation{
@@ -78,6 +79,69 @@ header > p{
   display: none;
 }
 
+.mobile__navigation{
+  position: absolute;
+  background-color: var(--White);
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 365px;
+  min-height: 320px;
+  display: flex;
+  padding-block: 2rem;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.active{
+  opacity: 1;
+}
+
+.mobile__navigation nav ul li{
+ text-align: center;
+}
+
+.mobile__navigation nav ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-direction: column;
+}
+
+.contact-button{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  width: 140px;
+  padding: 17px 0;
+  border-radius: 30px;
+  margin-inline: auto;
+  background-color: var(--Yellow);
+  color: var(--Very-dark-desaturated-blue);
+  font-family: var(--fonts-family-Fraunces-fonts);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-fraunces-bold-700);
+  transition: all .2s ease-in;
+}
+
+.contact-button:hover{
+  opacity: .5;
+}
+
+.mobile__navigation nav ul li a{
+  color: var(--Dark-grayish-blue);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-barlow-regular-600);
+  transition: color .2s ease-in;
+}
+
+.mobile__navigation nav ul li a:hover{
+  color: var(--Very-dark-desaturated-blue);
+}
+
 @media (width > 50rem){
 
   header{
@@ -96,6 +160,10 @@ header > p{
     display: flex;
     align-items: center;
     gap: 2.2rem;
+  } 
+
+  .mobile__navigation{
+    display: none;
   }
 
   .desktop__menu__navigation nav ul li a{
@@ -132,6 +200,7 @@ header > p{
     font-size: .8rem;
     font-weight: var(--font-weight-fraunces-bold-700);
     padding: 15px 25px;
+    margin-top: 0;
     border-radius: 30px;
     color: var(--Very-dark-desaturated-blue);
     transition: color .2s ease-in, 
